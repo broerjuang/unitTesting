@@ -12,7 +12,7 @@ module.exports = {
   findByYear: (year) => {
     // separate the function by its functionality
     let selectByYear = movie => movie.year == year
-    let result = movie => movie.title
+    let result = movie => movie
 
     // return the value by composing the two
     return R.compose(R.map(result), R.filter(selectByYear))(data)

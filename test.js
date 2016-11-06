@@ -21,6 +21,18 @@ describe('#list',() => {
   });
 });
 
+describe('#findByYear',() => {
+  it('It should have the same length between movie 2001 and lib.findByYear(2001).length', () => {
+    assert.equal(data.filter(datum => datum.year === 2001).length, lib.findByYear(2001).length);
+  });
+  it('It should have the same value between movie 2001 and lib.findByYear(2001).length', () => {
+    assert.deepEqual(data.filter(datum => datum.year === 2001), lib.findByYear(2001));
+  });
+  it('It should have the same value in index 12 between movie 2001 and lib.findByYear(2001).length', () => {
+    assert.deepEqual(data.filter(datum => datum.year === 2001)[12], lib.findByYear(2001)[12]);
+  });
+});
+
 //
 // // count
 //
